@@ -56,11 +56,51 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  background: #292929;
+  display: grid;
+  place-items: center center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+body {
+  margin: 0;
+}
+h1 {
+  font-size: 5rem;
+}
+main {
+  background: #1d1d1d;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 300px;
+  max-width: 550px;
+  width: 100%;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.clearBtn {
+  background: #313131;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.25rem;
+  padding: 10px 15px;
+  transition: 0.2s;
+}
+.clearBtn:hover {
+  background: #353535;
+}
+
 </style>
