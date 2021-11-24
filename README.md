@@ -1,5 +1,7 @@
 # vuejs
 
+11/24程研社課
+
 ## Project setup
 ```
 npm install
