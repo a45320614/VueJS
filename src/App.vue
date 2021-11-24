@@ -1,19 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul>
+      <to-do-input @addTodo="addTodo"></to-do-input>
+      <to-do-item
+        v-for="ToDoItem in ToDoItems"
+        v-bind="ToDoItem"
+        :title.sync="ToDoItem.title"
+        :done.sync="ToDoItem.done"
+        :key="ToDoItem.id"
+      ></to-do-item>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ToDoItem from "./components/ToDoItem";
+import ToDoInput from "./components/ToDoInput";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    ToDoItem,
+    ToDoInput
+  },
+  data() {
+    return {
+      maxID: 4,
+      ToDoItems: [
+        { id: 0, title: "Download Node.js", done: true },
+        { id: 1, title: "Install Vue CLI", done: true },
+        { id: 2, title: "Learn Vue", done: false },
+        { id: 3, title: "Create a to-do list", done: false },
+      ],
+    };
+  },
+  methods: {
+    addTodo(title) {
+      this.ToDoItems.push({
+        id: this.maxID++,
+        title: title,
+        done: false,
+      });
+    },
+},
+  
+};
+
+
 </script>
 
 <style>
