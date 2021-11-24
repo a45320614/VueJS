@@ -8,6 +8,7 @@
         :title.sync="ToDoItem.title"
         :done.sync="ToDoItem.done"
         :key="ToDoItem.id"
+        @removeTodo="removeTodo"
       ></to-do-item>
     </ul>
   </div>
@@ -42,9 +43,13 @@ export default {
         done: false,
       });
     },
-},
-  
+    removeTodo(id) {
+      this.ToDoItems = this.ToDoItems.filter((todo) => todo.id !== id);
+    },
+  },
 };
+  
+
 
 
 </script>
